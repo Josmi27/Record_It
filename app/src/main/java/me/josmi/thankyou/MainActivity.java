@@ -13,16 +13,14 @@ import android.widget.Toast;
 import java.text.DateFormat;
 import java.util.Calendar;
 
+// TODO: 6/8/2019 Add date to database, after history feature is implemented. 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     // tag, database helper, edit text
     private static final String TAG = "MainActivity";
 
     DatabaseHelper mDatabaseHelper;
-//    private Button Thankyou_Button;
-//    private EditText editText;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // editText Code
         final EditText editText = findViewById(R.id.editText);
 
-            // Button Code
+        // Button Code
         Button Thank_You_Button = findViewById(R.id.Thankyou_Button);
 
         Thank_You_Button.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         //HISTORY CODE FOR VERSION 2
-        
+
 //        History_Button.SetOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

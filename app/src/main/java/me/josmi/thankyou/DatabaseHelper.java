@@ -12,9 +12,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = "DatabaseHelper";
 
     private static final String TABLE_NAME = "entries_table";
-    private static final String COL1 = "ID";
+    //private static final String COL1 = "ID";
     private static final String COL2 = "message";
-    private static final String COL3 = "date";
+    //private static final String COL3 = "date";
 
     public  DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
@@ -30,12 +30,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // Creates Table
         String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COL2 + " TEXT," + COL3 + " DATE)";
+                COL2 + " TEXT)";
         db.execSQL(createTable);
     }
 
     // adds message to database, but is missing date. Date should be added as parameter
-    // I would simply Google "how to add current date into SQLitedatabase table column
+    // I would simply Google "how to add current date into SQLite database table column
     public boolean addData(String item) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
