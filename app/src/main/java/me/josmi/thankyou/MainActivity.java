@@ -1,5 +1,6 @@
 package me.josmi.thankyou;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
 
     DatabaseHelper mDatabaseHelper;
-    private Button Thankyou_Button;
-    private EditText editText;
+//    private Button Thankyou_Button;
+//    private EditText editText;
 
 
 
@@ -35,19 +36,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView textViewDate = findViewById(R.id.dateText);
         textViewDate.setText(currentDate);
 
-            // Button Code
-        Button Thankyoubutton = findViewById(R.id.Thankyou_Button);
-
-        Thankyoubutton.setOnClickListener(this);
-
-
         // editText Code
-        EditText editText = findViewById(R.id.editText);
+        final EditText editText = findViewById(R.id.editText);
+
+            // Button Code
+        Button Thank_You_Button = findViewById(R.id.Thankyou_Button);
+
+        Thank_You_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // newEntry represents the data that the user typed in
+                String newEntry = editText.getText().toString();
+                if (editText.length() != 0) {
+                    // Adds data, then resets text for user
+                    AddData(newEntry);
+                    editText.setText("");
+                } else {
+                    toastMessage("You must put something in the text field!");
+                }
+            }
+        });
+
+        //HISTORY CODE FOR VERSION 2
+        
+//        History_Button.SetOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, ListDataActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         // Database Code
         mDatabaseHelper = new DatabaseHelper(this);
-
-
     }
 
     public void AddData(String newEntry) {
