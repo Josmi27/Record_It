@@ -15,7 +15,7 @@ import java.util.Calendar;
 
 // TODO: 6/8/2019 Add date to database, after history feature is implemented. 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{    //} implements View.OnClickListener{
 
     // tag, database helper, edit text
     private static final String TAG = "MainActivity";
@@ -84,9 +84,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onClick(View v) {
-        Toast toasty = Toast.makeText(this, "The Lord Has Received Your Message", Toast.LENGTH_LONG);
-        toasty.show();
-    }
+//    @Override
+//    public void onClick(View v) {
+//        Toast toasty = Toast.makeText(this, "The Lord Has Received Your Message", Toast.LENGTH_LONG);
+//        toasty.show();
+//    }
 }
