@@ -55,8 +55,9 @@
             android:ems="10"
             android:inputType="textMultiLine"
             android:lines="10"
-            android:singleLine="false"
-            android:text="@string/entryBox" />
+            android:singleLine="false"/>
+            <!--android:text="@string/entryBox" -->
+
     </LinearLayout>
 
     <TextView

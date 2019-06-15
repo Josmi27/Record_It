@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity{    //} implements View.OnCl
 
         // editText Code
         final EditText editText = findViewById(R.id.editText);
+        editText.setHint("Enter your message here.");
 
         // Button Code
         Button Thank_You_Button = findViewById(R.id.Thankyou_Button);
@@ -44,10 +45,25 @@ public class MainActivity extends AppCompatActivity{    //} implements View.OnCl
             @Override
             public void onClick(View v) {
                 // newEntry represents the data that the user typed in
-                String newEntry = editText.getText().toString();
-                if (editText.length() != 0) {
+//                String newEntry = editText.getText().toString();
+//                if (editText.length() != 0) {
+//                    // Adds data, then resets text for user
+//                    AddData(newEntry);
+//                    editText.setText("");
+//                } else {
+//                    toastMessage("You must put something in the text field!");
+//                }
+
+                boolean Entry = !editText.getText().toString().trim().isEmpty();
+                if (Entry) {
                     // Adds data, then resets text for user
+                    String newEntry = editText.getText().toString();
                     AddData(newEntry);
+
+                    // Disable "Thank You" button until next day
+
+
+                    // Reset text box
                     editText.setText("");
                 } else {
                     toastMessage("You must put something in the text field!");
